@@ -50,7 +50,7 @@ contract Raffle is VRFConsumerBaseV2, KeeperCompatibleInterface {
     event WinnerPicked(address indexed winner);
 
     constructor(
-        address vrfCoordinatorV2, 
+        address vrfCoordinatorV2,  // contract address
         uint64 subscriptionId,
         bytes32 gasLane, // keyHash
         uint256 interval,
