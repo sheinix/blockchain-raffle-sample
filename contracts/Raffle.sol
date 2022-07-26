@@ -136,6 +136,8 @@ contract Raffle is VRFConsumerBaseV2, KeeperCompatibleInterface {
         
         uint256 indexOfWinner = randomWords[0] % s_players.length;
         address payable recentWinner = s_players[indexOfWinner];
+        // store the recent winner:
+        s_recentWinner = recentWinner;
         // Reset players array:
         s_players = new address payable[](0);
         // Reset last timestamp:
@@ -182,5 +184,9 @@ contract Raffle is VRFConsumerBaseV2, KeeperCompatibleInterface {
     }
     function getRequestConfirmations() public pure returns(uint256) {
         return REQUEST_CONFIRMATIONS;
+    }
+    
+    function getInterval() public view returns(uint256) {
+        return i_interval;
     }
 }
