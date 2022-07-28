@@ -20,15 +20,6 @@ module.exports = {
       localhost: {
           chainId: 31337,
       },
-      kovan: {
-          url: process.env.KOVAN_RPC_URL,
-          accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
-          //accounts: {
-          //     mnemonic: MNEMONIC,
-          // },
-          saveDeployments: true,
-          chainId: 42,
-      },
       rinkeby: {
           url: RINKEBY_RPC_URL,
           accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
@@ -53,12 +44,18 @@ module.exports = {
           saveDeployments: true,
           chainId: 137,
       },
+      polygonMumbai: {
+        url: process.env.POLYGON_MUMBAI_RPC_URL,
+        accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+        saveDeployments: true,
+        chainId: 80001,
+    },
   },
   etherscan: {
       // yarn hardhat verify --network <NETWORK> <CONTRACT_ADDRESS> <CONSTRUCTOR_PARAMETERS>
       apiKey: {
           rinkeby: process.env.ETHERSCAN_API_KEY,
-          kovan: process.env.ETHERSCAN_API_KEY,
+          polygonMumbai: process.env.POLYGONSCAN_API_KEY,
           polygon: process.env.POLYGONSCAN_API_KEY,
       },
   },
@@ -67,7 +64,7 @@ module.exports = {
       currency: "USD",
       outputFile: "gas-report.txt",
       noColors: true,
-      // coinmarketcap: process.env.COINMARKETCAP_API_KEY,
+      coinmarketcap: process.env.COINMARKETCAP_API_KEY,
   },
   contractSizer: {
       runOnCompile: false,

@@ -2,7 +2,7 @@ const { EtherscanProvider } = require("@ethersproject/providers")
 const { assert, expect } = require("chai")
 const { network, getNamedAccounts, deployments, ethers } = require("hardhat")
 const { t } = require("tar")
-const { developmentChains, networkConfig } = require("../helper-hardhat-config")
+const { developmentChains, networkConfig } = require("../../../helper-hardhat-config")
 
 !developmentChains.includes(network.name)
     ? describe.skip
