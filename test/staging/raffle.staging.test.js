@@ -16,7 +16,7 @@ developmentChains.includes(network.name)
             raffleEntranceFee = await raffle.getEntranceFee()
         })
 
-        describe("fullfillRandomWords"), function() {
+        describe("fullfillRandomWords", function() {
             it("works with live chainlink keepers and chainlink vrf, we get a random winner", async function() {
                 // enter raffle:
                 const startingTimestamp = await raffle.getLatestTimestamp()
@@ -62,5 +62,5 @@ developmentChains.includes(network.name)
                     // this code wont complete until the listener has finished listening-
                 })
             })
-        }
+        })
     })
