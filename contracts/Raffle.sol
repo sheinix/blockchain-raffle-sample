@@ -67,6 +67,9 @@ contract Raffle is VRFConsumerBaseV2, KeeperCompatibleInterface {
         i_callbackGasLimit = callbackGasLimit;
     }
 
+    /**
+    * @dev Enters the raffle, emits RaffleEnter event.
+     */
     function enterRaffle() public payable {
         //require msg.value > i_entrancefee
         if(msg.value < i_entranceFee) { 

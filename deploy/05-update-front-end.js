@@ -12,13 +12,18 @@ module.exports = async () => {
         console.log("Front end written!")
     }
 }
-
+/**
+ * Updates the ABI file.
+ */
 async function updateAbi() {
     console.log("Writing ABI...")
     const raffle = await ethers.getContract("Raffle")
     fs.writeFileSync(frontEndAbiFile, raffle.interface.format(ethers.utils.FormatTypes.json))
 }
 
+/**
+ * Updates the contract addresses file for the front end.
+ */
 async function updateContractAddresses() {
     console.log("Writing addresssesclaer...")
     const raffle = await ethers.getContract("Raffle")
