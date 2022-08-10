@@ -9,7 +9,7 @@ async function mockKeepers() {
         const txReceipt = await tx.wait(1)
         const requestId = txReceipt.events[1].args.requestId
         console.log(`Performed upkeep with RequestId: ${requestId}`)
-        if (network.config.chainId == 31337) {
+        if (network.config.chainId == 1337) {
             await mockVrf(requestId, raffle)
         }
     } else {
